@@ -176,47 +176,33 @@ body::after {
   z-index: -1;
 }
 
-.corazon-oculto {
+.secreto {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  background: red;
-  transform: rotate(45deg);
   cursor: pointer;
-  z-index: 10;
 }
 
-.corazon-oculto:before,
-.corazon-oculto:after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background: red;
-  border-radius: 50%;
+.corazon-oculto {
+  font-size: 24px;
+  transition: transform 0.3s ease;
 }
 
-.corazon-oculto:before {
-  top: -15px;
-  left: 0;
-}
-.corazon-oculto:after {
-  top: 0;
-  left: -15px;
+.corazon-oculto:hover {
+  transform: scale(1.3);
 }
 
 .mensaje-oculto {
-  position: absolute;
-  top: 30%;
-  left: 80%;
-  transform: translate(-50%, -50%);
-  background: #ffb6c1;
-  padding: 10px 15px;
-  border-radius: 10px;
   display: none;
-  color: #000;
-  font-weight: bold;
+  color: #ffc0cb;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px 10px;
+  border-radius: 12px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  white-space: nowrap;
 }
-.corazon-oculto:hover + .mensaje-oculto {
+
+.secreto:hover .mensaje-oculto {
   display: block;
 }
+
