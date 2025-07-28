@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #2b2b2b, #1a1a1a);
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* Header principal */
+header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #e5ebea;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2em;
+  margin: 20px auto 5px;
+  max-width: 600px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Bloque de la pregunta */
+.pregunta-amor {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.pregunta-amor p {
+  font-size: 1.4em;
+  color: #ffb6c1;
+  margin-bottom: 20px;
+}
+
+.btn-si,
+.btn-no {
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s ease;
+}
+
+.btn-si {
+  background-color: #ff5e99;
+  color: white;
+}
+
+.btn-si:hover {
+  background-color: #ff397c;
+}
+
+.btn-no {
+  background-color: #333;
+  color: white;
+  position: absolute;
+}
+
+/* Galería de imágenes */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+}
+
+section img {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(24, 5, 70, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  opacity: 0.9;
+  border: 2px solid #000000;
+}
+
+section img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  filter: brightness(110%) contrast(110%);
+  box-shadow: 0 15px 30px rgba(35, 6, 73, 0.6);
+}
+
+/* Corazones flotando */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgb(48, 5, 129);
+  transform: rotate(45deg);
+  animation: float 5s infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgb(51, 2, 165);
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -10px;
+  left: 0;
+}
+
+.heart:after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.carta {
+  background-color: rgba(255, 182, 193, 0.1);
+  border: 2px solid #ffb6c1;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.3em;
+  box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+  animation: aparecer 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('img/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* capa oscura transparente */
+  z-index: -1;
+}
